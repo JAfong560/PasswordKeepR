@@ -1,6 +1,13 @@
 LHL Node Skeleton
 =========
 
+## PasswordKeepR
+
+## Screenshots
+
+!["Screeshot of project choice"](https://github.com/JAfong560/PasswordKeepR/blob/master/doc/option5.png)
+!["Screeshot of project requirements"](https://github.com/JAfong560/PasswordKeepR/blob/master/doc/requirements.png)
+
 ## Project Setup
 
 The following steps are only for _one_ of the group members to perform.
