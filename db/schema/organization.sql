@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS organization CASCADE;
+CREATE TABLE organization (
+  org_id SERIAL PRIMARY KEY NOT NULL,
+  org_name VARCHAR(255) NOT NULL
+);
