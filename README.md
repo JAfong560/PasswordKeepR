@@ -17,6 +17,29 @@ LHL Node Skeleton
 !["User interface"](https://github.com/JAfong560/PasswordKeepR/blob/master/doc/wireframe.png)
 
 
+## Routes
+As a organization I want to be able add/delete,
+edit user access to organization accounts
+ 
+Get /adminLogin  # to login organization admin panel
+Post /adminLogin  # to enter admin panel
+ 
+GET /admin_panel  # to see users
+POST /admin_panel  # to make changes to user accesses
+ 
+ 
+As a user I want to be able to see my organization accounts
+  
+Get /login  # to enter my user name and password, my Organization provided me
+POST /login  # if user authentication successful, to see passwords
+ 
+ 
+As a user I want to be able add a password there
+ 
+GET /create  # to enter new account
+POST /create  # to add that password in database
+
+
 
 ## Project Setup
 
