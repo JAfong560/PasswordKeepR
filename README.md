@@ -10,7 +10,13 @@ LHL Node Skeleton
 
 
 ## Wireframes
-!["Screeshot of project choice"](https://github.com/JAfong560/PasswordKeepR/blob/master/doc/wireframe.png)
+
+!["Admin panel"](https://github.com/JAfong560/PasswordKeepR/blob/master/doc/wireframe_admin.png)
+
+
+!["User interface"](https://github.com/JAfong560/PasswordKeepR/blob/master/doc/wireframe.png)
+
+
 
 ## Project Setup
 
