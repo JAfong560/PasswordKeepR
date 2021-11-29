@@ -1,5 +1,17 @@
 // See: https://sass-lang.com/
 
+.header {
+  position: fixed;
+  top: 0%;
+  div {
+    padding-top: 1%;
+  }
+}
+
+.navbar {
+  margin-top: 3rem;
+}
+
 body,
 html {
   margin: 0;
