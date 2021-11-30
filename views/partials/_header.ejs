@@ -1,0 +1,42 @@
+<header class="header">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index">🔑 PasswordKeepR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+        </ul>
+        <!-- <form class="d-flex">
+          <input class="form-control me-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+
+        <!--Register/ Login/ Logout-->
+        <div class="d-flex">
+          <% if ("user") {%>
+            <form class="d-flex" method="POST" action="/index">
+              <input class="form-control me-sm-2" type="text" placeholder="Search">
+              <button type="submit" class="btn btn-outline-secondary">Logout</button>
+            </form>
+            <%} else {%>
+              <div style="margin-left: 200px">
+                <form class="form-inline" method="POST" action="/loginbtn">
+                  <a class="nav-item nav-link" style="padding: 20px;" href="/login">Register</a>
+                  <a class="nav-item nav-link" style="padding: 20px;" href="/index">Login</a>
+                </form>
+              </div>
+              <%}%>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

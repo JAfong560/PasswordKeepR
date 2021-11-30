@@ -12,7 +12,11 @@ $(document).ready(function() {
   </tr>`
   }
 
-  $("form").submit(function (e) {
+  $(".collapsed").on('click', function() {
+    $("#collapseOne").slideToggle("slow");
+  });
+
+  $("#addUser").submit(function (e) {
     e.preventDefault();
 
     console.log('clicked!');
