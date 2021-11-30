@@ -92,15 +92,17 @@
               </form>
           </td>
         </tr>
-        <% if (locals.result) { %>
-          <% locals.result.forEach(item => {%>
-            <li><%=JSON.stringify(item)%></li>
-          <% })%>
-        <% }%>
 
     </tbody>
   </table>
-  <script src="/lib/node-db.js"></script>
+
+  <span>
+    *****************here should be data************************
+
+    <li><%=JSON.stringify(locals.result)%></li>
+    <li><script src="/routes/users.js"></script></li>
+
+</span>
 </body>
 
 </html>

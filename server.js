@@ -68,10 +68,6 @@ app.get("/", (req, res) => {
 
 //after user authentication, user interface
 app.post("/index", (req, res) => {
-  const userName = req.body.username;
-  const passsword = req.body.password;
-  console.log("username", userName);
-  console.log("password", passsword);
   res.render("index");
 });
 
