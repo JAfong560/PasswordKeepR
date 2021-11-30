@@ -25,3 +25,12 @@ $(document).ready(function() {
     //*********************************************
   })
 });
+
+
+//*****************creating new username/password */
+$(doucment).ready(function(){
+  $("create").click(function(){
+    
+  })
+
+})
