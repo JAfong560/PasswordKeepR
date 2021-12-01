@@ -78,10 +78,6 @@ app.post("/stores", (req, res) => {
 
 
 
-app.post("/index", (req, res) => {
-  res.render("index");
-});
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

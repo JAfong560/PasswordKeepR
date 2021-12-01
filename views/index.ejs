@@ -17,20 +17,21 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <form id="addUser">
+                <form id="addUser" method="POST" action="/index">
                   <div class="form-group">
-                    <label for="inputOrg" class="form-label mt-4">Organization</label>
-                    <input type="text" class="form-control" id="inputOrg" aria-describedby="emailHelp"
-                      placeholder="Enter organization">
+                    <label for="inputOrg" class="form-label mt-4">Organization #</label>
+                    <input type="text" class="form-control" name="inputOrg" placeholder="Enter organization #">
+
                     <label for="inputURL" class="form-label mt-4">URL</label>
-                    <input type="url" class="form-control" id="inputURL" aria-describedby="emailHelp" placeholder="Enter url">
+                    <input type="url" class="form-control" name="inputURL"  placeholder="Enter url">
+
                     <label for="inputPass" class="form-label mt-4">Password</label>
-                    <input type="password" class="form-control" id="inputPass" aria-describedby="emailHelp"
-                      placeholder="Enter password">
+                    <input type="password" class="form-control" name="inputPass"  placeholder="Enter password">
+
                     <label for="inputCat" class="form-label mt-4">Category</label>
-                    <input type="text" class="form-control" id="inputCat" aria-describedby="emailHelp"
-                      placeholder="Enter category">
-                    <button class="addUser">Add user</button>
+                    <input type="text" class="form-control" name="inputCat"    placeholder="Enter category">
+
+                    <button class="addUser btn btn-dark">Add user</button>
                   </div>
                 </form>
               </div>
@@ -52,48 +53,45 @@
             </tr>
           </thead>
           <tbody class="tPasswords">
-            <tr class="table-primary">
-              <th scope="row">Primary</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>
-                <button type="button" class="btn btn-primary">Edit</button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Secondary</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>
-                <button type="button" class="btn btn-dark">Edit</button>
-              </td>
-            </tr>
+            <% let toggle = true %>
             <% for (let store of locals.stores) {%>
-              <tr class="table-secondary">
-                <th scope="row"> <%= store.category %> </th>
+               <% if (toggle) {%>
+              <tr class="table-primary">
+                <th scope="row"> <%= store.org_name%> </th>
                 <td> <%= store.storedpass %> </td>
-                <!-- Edit button -->
                 <td> <%= store.site_url %> </td>
-                <!-- Delete button -->
+                <td> <%= store.category %> </td>
                 <td>
                     <form >
-                      <button type="Submit" class="btn btn-dark"> Edit </button>
+                      <button type="Submit" class="btn btn-primary"> Edit </button>
                     </form>
                 </td>
               </tr>
+              <% toggle = false; %>
+              <% } else {%>
+                <tr class="table-secondary">
+                  <th scope="row"> <%= store.org_name %> </th>
+                  <td> <%= store.storedpass %> </td>
+                  <td> <%= store.site_url %> </td>
+                  <td> <%= store.category %> </td>
+                  <td>
+                      <form >
+                        <button type="Submit" class="btn btn-dark"> Edit </button>
+                      </form>
+                  </td>
+                </tr>
+              <% toggle = true;} %>
             <%}%>
           </tbody>
         </table>
 
-  <span>
+  <!-- <span>
     *****************here should be data************************
 
     <li><%=JSON.stringify(locals.data)%></li>
     <li><script src="/routes/users.js"></script></li>
 
-</span>
+</span> -->
 </body>
 
 

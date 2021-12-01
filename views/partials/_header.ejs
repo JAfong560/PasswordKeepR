@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home
+            <a class="nav-link active" href="/login">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
@@ -22,16 +22,17 @@
 
         <!--Register/ Login/ Logout-->
         <div class="d-flex">
-          <% if ("user") {%>
+          <% if (locals.stores[0]) {%>
             <form class="d-flex" method="POST" action="/index">
-              <input class="form-control me-sm-2" type="text" placeholder="Search">
+              <input class="form-control me-sm-2" type="text" readonly="" placeholder="Logged in as: <% locals.stores[0].name %> ">
               <button type="submit" class="btn btn-outline-secondary">Logout</button>
             </form>
             <%} else {%>
               <div style="margin-left: 200px">
-                <form class="form-inline" method="POST" action="/loginbtn">
-                  <a class="nav-item nav-link" style="padding: 20px;" href="/login">Register</a>
-                  <a class="nav-item nav-link" style="padding: 20px;" href="/index">Login</a>
+                <form class="form-inline" method="POST" action="/login">
+                  <input class="form-control me-sm-2" type="text" name="loginuser" placeholder="Username: ">
+                  <input class="form-control me-sm-2" type="text" name="loginpassword" placeholder="Password: ">
+                  <button type="submit" class="btn btn-outline-secondary">Login</button>
                 </form>
               </div>
               <%}%>
