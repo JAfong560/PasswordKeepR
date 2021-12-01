@@ -52,7 +52,7 @@ const widgetsRoutes = require("./routes/widgets");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/index", usersRoutes(db));
-app.use("/stores", storeRoutes(db));
+//app.use("/stores", storeRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
@@ -69,14 +69,14 @@ app.get("/", (req, res) => {
   res.render("login");
 });
 
+// app.get("/index", (req, res) => {
+//   res.render("index");
+// });
 
-
-//after user authentication, user interface
-app.post("/stores", (req, res) => {
-  res.render("stores");
-});
-
-
+// //after user authentication, user interface
+// app.post("/index", (req, res) => {
+//   res.redirect("/index");
+// });
 
 
 app.listen(PORT, () => {
