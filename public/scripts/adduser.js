@@ -16,7 +16,7 @@ $(document).ready(function() {
     $("#collapseOne").slideToggle("slow");
   });
 
-  $("#addUser").submit(function (e) {
+  $("addUser").submit(function (e) {
     e.preventDefault();
 
     console.log('clicked!');
