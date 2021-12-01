@@ -65,23 +65,23 @@
   </nav>
   <br>
   <h1>Have fun!</h1>
+
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Organization</th>
+        <th scope="col">Category</th>
         <th scope="col">Password</th>
         <th scope="col">Username</th>
         <th scope="col">Edit</th>
       </tr>
     </thead>
     <tbody>
-
       <% for (let store of locals.stores) {%>
         <tr>
-          <td> <=% store.user_id %> </td>
-          <td> <=% store.storedpass %> </td>
+          <td> <%= store.category %> </td>
+          <td> <%= store.user_id %> </td>
           <!-- Edit button -->
-          <td> <=% store.site_url %> </td>
+          <td> <%= store.site_url %> </td>
           <!-- Delete button -->
           <td>
               <form >
@@ -89,15 +89,12 @@
               </form>
           </td>
         </tr>
-        <%}%>
+      <%}%>
+
+
     </tbody>
   </table>
 
-  <span>
-    *****************here should be data************************
-
-    <li><%=JSON.stringify(locals.data)%></li>
-    <li><script src="/routes/users.js"></script></li>
 
 </span>
 </body>
