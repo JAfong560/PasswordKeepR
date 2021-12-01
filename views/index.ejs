@@ -74,7 +74,32 @@
         </table>
 
 
-      </div>
-  </body>
+      <% for (let store of locals.stores) {%>
+        <tr>
+          <td> <=% store.user_id %> </td>
+          <td> <=% store.storedpass %> </td>
+          <!-- Edit button -->
+          <td> <=% store.site_url %> </td>
+          <!-- Delete button -->
+          <td>
+              <form >
+                <button type="Submit"> Edit </button>
+              </form>
+          </td>
+        </tr>
+        <%}%>
+    </tbody>
+  </table>
+
+  <span>
+    *****************here should be data************************
+
+    <li><%=JSON.stringify(locals.data)%></li>
+    <li><script src="/routes/users.js"></script></li>
+
+</span>
+</body>
+
+
 
   </html>
