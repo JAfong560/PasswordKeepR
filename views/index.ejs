@@ -70,26 +70,22 @@
                 <button type="button" class="btn btn-dark">Edit</button>
               </td>
             </tr>
+            <% for (let store of locals.stores) {%>
+              <tr class="table-secondary">
+                <th scope="row"> <%= store.category %> </th>
+                <td> <%= store.storedpass %> </td>
+                <!-- Edit button -->
+                <td> <%= store.site_url %> </td>
+                <!-- Delete button -->
+                <td>
+                    <form >
+                      <button type="Submit" class="btn btn-dark"> Edit </button>
+                    </form>
+                </td>
+              </tr>
+            <%}%>
           </tbody>
         </table>
-
-
-      <% for (let store of locals.stores) {%>
-        <tr>
-          <td> <=% store.user_id %> </td>
-          <td> <=% store.storedpass %> </td>
-          <!-- Edit button -->
-          <td> <=% store.site_url %> </td>
-          <!-- Delete button -->
-          <td>
-              <form >
-                <button type="Submit"> Edit </button>
-              </form>
-          </td>
-        </tr>
-        <%}%>
-    </tbody>
-  </table>
 
   <span>
     *****************here should be data************************
