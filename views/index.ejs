@@ -45,14 +45,14 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">Organization</th>
+              <th scope="col">Category</th>
               <th scope="col">Stored Password</th>
               <th scope="col">URL</th>
-              <th scope="col">Category</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody class="tPasswords">
-            <tr class="table-primary">
+            <!-- <tr class="table-primary">
               <th scope="row">Primary</th>
               <td>Column content</td>
               <td>Column content</td>
@@ -69,7 +69,7 @@
               <td>
                 <button type="button" class="btn btn-dark">Edit</button>
               </td>
-            </tr>
+            </tr> -->
             <% for (let store of locals.stores) {%>
               <tr class="table-secondary">
                 <th scope="row"> <%= store.category %> </th>
@@ -87,13 +87,6 @@
           </tbody>
         </table>
 
-  <span>
-    *****************here should be data************************
-
-    <li><%=JSON.stringify(locals.data)%></li>
-    <li><script src="/routes/users.js"></script></li>
-
-</span>
 </body>
 
 

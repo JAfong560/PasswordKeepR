@@ -21,5 +21,8 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.post("/", (req, res) => {
+    res.redirect("/index")
+  })
   return router;
 };
