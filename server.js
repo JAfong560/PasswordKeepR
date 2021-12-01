@@ -12,7 +12,9 @@ const morgan = require("morgan");
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
-db.connect();
+db.connect((err) => {
+  if (err) return console.log(err) // Shows error if something happened
+});
 
 
 const cookieSession = require("cookie-session");
@@ -76,9 +78,22 @@ app.post("/index", (req, res) => {
 });
 
 app.get("/index", (req, res) => {
+
+  //calling the function with a callbaclk!
+  /* let user = getUserWithId(1, (rows) => {
+    console.log("The result is ", rows)
+  }) */
   res.render("index");
 });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+
+/* function getUserWithId(id, callback) {
+    db.query('SELECT * FROM storeAccounts WHERE storeAccounts.account_id = $1::integer', [id], (err, res) => {
+      console.log(err ? err.stack : res.rows)
+      callback(res.rows);
+    })
+  } */

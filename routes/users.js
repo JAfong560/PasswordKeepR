@@ -10,10 +10,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+    db.query(`SELECT * FROM storeaccounts;`)
       .then(data => {
-        const users = data.rows;
-        res.json({ users });
+        const stores = data.rows;
+        res.status(200).render("stores", { stores } )
       })
       .catch(err => {
         res
@@ -21,5 +21,20 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.get("/index", (req, res) => {
+    const user = 1;
+    db.query(`SELECT * FROM storeAccounts;`)
+      .then(data => {
+        const stores = data.rows;
+        res.status(200).render("stores", { stores } )
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
   return router;
 };
