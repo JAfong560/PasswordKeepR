@@ -9,6 +9,7 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+  // Default display erverything
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM storeaccounts JOIN organization ON storeaccounts.org_id = organization.org_id JOIN users ON storeaccounts.user_id = users.id;`)
       .then(data => {
@@ -28,6 +29,7 @@ module.exports = (db) => {
     res.redirect("/index")
   }) */
 
+  //Create new account
   router.post("/", (req, res) => {
     // console.log(req.body)
 
@@ -47,6 +49,12 @@ module.exports = (db) => {
         .status(500)
         .json({ error: err.message });
     });
+  });
+
+  // Redirect to URL
+  router.post("/u/:store.site_url", (req, res) => {
+    const { site_url } = req.params;
+    res.redirect(`http://${site_url}`);
   });
 
   return router;

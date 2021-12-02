@@ -66,7 +66,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 
 //main login page for user
 app.get("/", (req, res) => {
-  res.render("login");
+  res.redirect("index");
 });
 
 
