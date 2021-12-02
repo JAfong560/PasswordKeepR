@@ -51,11 +51,13 @@ module.exports = (db) => {
     });
   });
 
+
   // Redirect to URL
   router.post("/u/:store.site_url", (req, res) => {
     const { site_url } = req.params;
     res.redirect(`http://${site_url}`);
   });
+
 
   return router;
 };
