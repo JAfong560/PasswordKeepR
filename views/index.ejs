@@ -8,6 +8,7 @@
       <div class="container">
         <div class="page-header"></div>
 
+        <!-- Add user accordian form -->
         <div class="accordion" id="addUserToggle">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
@@ -17,13 +18,14 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <div class="accordion-body">
+                <!-- Form input -->
                 <form id="addUser" method="POST" action="/index">
                   <div class="form-group">
-                    <label for="inputOrg" class="form-label mt-4">Organization #</label>
+                    <label for="inputOrg" class="form-label mt-4">Organization</label>
                     <!-- <input type="text" class="form-control" name="inputOrg" placeholder="Enter organization #"> -->
                     <select class="form-control" name="inputOrg">
                       <option value="1">Lighthouse Labs</option>
-                      <option value="2">Goolge</option>
+                      <option value="2">Google</option>
                       <option value="3">Scotia Bank</option>
                       <option value="4">Startup</option>
                     </select>
@@ -78,7 +80,7 @@
                     </form>
                 </td>
                 <td>
-                  <button type="Submit" class="btn btn-dark"> Copy </button>
+                  <button type="button" class="btn btn-primary cpButton" value="<%= store.storedpass %>"> Copy </button>
                 </td>
               </tr>
               <% toggle = false; %>
@@ -92,7 +94,7 @@
                         <button type="Submit" class="btn btn-dark"> Edit </button>
                   </td>
                   <td>
-                      <button type="Submit" class="btn btn-dark"> Copy </button>
+                      <button type="button" class="btn btn-dark cpButton" value="<%= store.storedpass %>"> Copy </button>
                   </td>
                 </tr>
               <% toggle = true;} %>
