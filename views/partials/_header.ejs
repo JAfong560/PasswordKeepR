@@ -22,9 +22,9 @@
 
         <!--Register/ Login/ Logout-->
         <div class="d-flex">
-          <% if (locals.stores[0]) {%>
-            <form class="d-flex" method="POST" action="/index">
-              <input class="form-control me-sm-2" type="text" readonly="" placeholder="Logged in as: <% locals.stores[0].name %> ">
+          <% if (locals.stores) {%>
+            <form class="d-flex" method="GET" action="/index">
+              <input class="form-control me-sm-2" type="text" readonly="" placeholder="Logged in as: Alice ">
               <button type="submit" class="btn btn-outline-secondary">Logout</button>
             </form>
             <%} else {%>
